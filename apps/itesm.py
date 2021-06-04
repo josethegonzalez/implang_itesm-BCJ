@@ -15,6 +15,9 @@ import plotly.offline as offline
 import dash_table
 
 
+df_final_2020 = pd.read_csv('df_final_2020.csv')
+df_final_2011 = pd.read_csv('df_final_2011.csv')
+df_SUELOS_PIVOT = pd.read_csv('df_SUELOS_PIVOT.csv')
 
 df = px.data.iris() # iris is a pandas DataFrame
 fig = px.scatter(df, x="sepal_width", y="sepal_length")
@@ -185,6 +188,42 @@ layout =html.Div([
             ])
         ]),
 
+    dbc.Container([
+     html.Div([
+
+         html.Div(id='text-output'),
+
+         dcc.Dropdown(
+             id = 'dropdown3',
+             placeholder="Selecciona la Zona a Filtrar",
+             value = 'Casco Urbano',
+             multi = False,
+             options=[
+                {'label': 'Valle Oriente', 'value': 'Valle Oriente'},
+                {'label': 'Casco Urbano', 'value': 'Casco Urbano'},
+                {'label': 'Centrito', 'value': 'Centrito'}
+              ],
+         ),
+
+
+           dcc.Graph(
+             id = 'my_map3',
+               figure = {}
+         ),
+
+          dcc.Graph(
+             id = 'my_map_2',
+               figure = {}
+         ),
+
+          dcc.Graph(
+             id = 'bargraph',
+               figure = {}
+         ),
+
+
+     ])
+        ])
 
     dbc.Container([
         html.Br(),

@@ -18,7 +18,9 @@ import dash_table
 import callbacks
 
 
-
+df_final_2020 = pd.read_csv('df_final_2020.csv')
+df_final_2011 = pd.read_csv('df_final_2011.csv')
+df_SUELOS_PIVOT = pd.read_csv('df_SUELOS_PIVOT.csv')
 final_2v = pd.read_csv('PoblacionFinal.csv')
 df_denue = pd.read_csv('df_denue.csv')
 
@@ -123,6 +125,126 @@ def update_output(comercios):
 
     return fig_d
 
+#CLOROPLETH
+
+@app.callback(
+    Output('my_map3', 'figure'),
+    Input('dropdown3', 'value'),
+)
+def update_output(zona):
+
+    to_figure = df_final_2020[df_final_2020['ZONA'] == zona]
+    lon = 0
+    lat = 0
+
+    if zona == 'Valle Oriente':
+        lon = -100.33
+        lat = 25.648
+    elif zona == 'Casco Urbano':
+        lon = -100.4025
+        lat = 25.6573
+    elif zona == 'Centrito':
+        lon = -100.366
+        lat = 25.66
+    else:
+        lon = -100.402428
+        lat = 25.664909
+
+    fig_d = px.choropleth_mapbox(to_figure, geojson=to_figure.geometry, locations = to_figure.index,
+    color=to_figure.Categoria, zoom=13.5, center = {"lat": lat, "lon": lon},
+    #animation_frame = 'Year',
+    color_discrete_map={
+        'ABANDONADA'  : 'rgb(204,102,0)',
+        'AREA NATURAL PROTEGIDA': 'rgb(153,255,204)',
+        'BALDIO NO URBANO': 'rgb(153,76,0)',
+        'BALDIO URBANO' : 'rgb(102,51,0)',
+        'COMERCIO'  : 'rgb(255,0,0)',
+        'DERECHO DE PASO' : 'rgb(229,204,255)',
+        'ESPACIOS ABIERTOS' : 'rgb(204,255,153)',
+        'EN CONSTRUCCION' : 'rgb(153,153,0)',
+        'EQUIPAMIENTO PRIVADO' : 'rgb(128,128,128)',
+        'EQUIPAMIENTO URBANO' : 'rgb(160,160,160)',
+        'HABITACIONAL MULTIFAMILIAR' : 'rgb(255,165,0)',
+        'HABITACIONAL UNIFAMILIAR' : '#FFFD82',
+        'INFRAESTRUCTURA' : 'rgb(102,0,51)',
+        'INDUSTRIA': 'rgb(102,102,255)',
+        'HABITACIONAL CON COMERCIO O SERVICIOS' : 'rgb(255,153,153)',
+        'COMERCIOS Y SERVICIOS' : 'rgb(255,51,51)',
+        'PRESERVACION ECOLOGICA': 'rgb(255,165,0)',
+        'RIO': 'rgb(0,0,255)',
+        'SERVICIOS'  : 'rgb(255,51,51)'})
+    #No tiene color: Baldio no urbano, baldio urbano, derecho de paso, contruccion, Equipamiento urbano y publico, infraestructura, habitacional con comercio,
+    fig_d.update_layout(mapbox_style="carto-positron")
+    fig_d.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    fig_d.update_layout(showlegend=False)
+
+    return fig_d
+
+@app.callback(
+    Output('my_map_2', 'figure'),
+    Input('dropdown3', 'value'),
+)
+def update_output2(zona):
+
+    to_figure = df_final_2011[df_final_2011['ZONA'] == zona]
+    lon = 0
+    lat = 0
+
+    if zona == 'Valle Oriente':
+        lon = -100.33
+        lat = 25.648
+    elif zona == 'Casco Urbano':
+        lon = -100.4025
+        lat = 25.6573
+    elif zona == 'Centrito':
+        lon = -100.366
+        lat = 25.66
+    else:
+        lon = -100.402428
+        lat = 25.664909
+
+    fig_d = px.choropleth_mapbox(to_figure, geojson=to_figure.geometry, locations = to_figure.index,
+    color=to_figure.Categoria, zoom=13.5, center = {"lat": lat, "lon": lon},
+    #animation_frame = 'Year',
+    color_discrete_map={
+        'ABANDONADA'  : 'rgb(204,102,0)',
+        'AREA NATURAL PROTEGIDA': 'rgb(153,255,204)',
+        'BALDIO NO URBANO': 'rgb(153,76,0)',
+        'BALDIO URBANO' : 'rgb(102,51,0)',
+        'COMERCIO'  : 'rgb(255,0,0)',
+        'DERECHO DE PASO' : 'rgb(229,204,255)',
+        'ESPACIOS ABIERTOS' : 'rgb(204,255,153)',
+        'EN CONSTRUCCION' : 'rgb(153,153,0)',
+        'EQUIPAMIENTO PRIVADO' : 'rgb(128,128,128)',
+        'EQUIPAMIENTO URBANO' : 'rgb(160,160,160)',
+        'HABITACIONAL MULTIFAMILIAR' : 'rgb(255,165,0)',
+        'HABITACIONAL UNIFAMILIAR' : '#FFFD82',
+        'INFRAESTRUCTURA' : 'rgb(102,0,51)',
+        'INDUSTRIA': 'rgb(102,102,255)',
+        'HABITACIONAL CON COMERCIO O SERVICIOS' : 'rgb(255,153,153)',
+        'COMERCIOS Y SERVICIOS' : 'rgb(255,51,51)',
+        'PRESERVACION ECOLOGICA': 'rgb(255,165,0)',
+        'RIO': 'rgb(0,0,255)',
+        'SERVICIOS'  : 'rgb(255,51,51)'})
+    #No tiene color: Baldio no urbano, baldio urbano, derecho de paso, contruccion, Equipamiento urbano y publico, infraestructura, habitacional con comercio,
+    fig_d.update_layout(mapbox_style="carto-positron")
+    fig_d.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+    fig_d.update_layout(showlegend=False)
+
+    return fig_d
+
+
+@app.callback(
+    Output('bargraph', 'figure'),
+    Input('dropdown3', 'value'),
+)
+def update_output3(zona):
+
+    df_bar = df_SUELOS_PIVOT[df_SUELOS_PIVOT['ZONA'] == zona]
+
+    bar = px.bar(df_bar, x= 'Categoria', y = 'Value', color = 'Year', barmode="group")
+
+    return bar
 
 app.config.suppress_callback_exceptions = True
 
