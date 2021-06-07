@@ -16,8 +16,15 @@ import dash_table
 
 
 df_final_2020 = pd.read_csv('df_final_2020.csv')
+df_final_2020.set_index('RML')
 df_final_2011 = pd.read_csv('df_final_2011.csv')
+df_final_2011.set_index('RML')
 df_SUELOS_PIVOT = pd.read_csv('df_SUELOS_PIVOT.csv')
+
+df_final_2020['geometry'] = gpd.GeoSeries.from_wkt(df_final_2020['geometry'])
+df_final_2020 = gpd.GeoDataFrame(df_final_2020, geometry='geometry')
+df_final_2011['geometry'] = gpd.GeoSeries.from_wkt(df_final_2011['geometry'])
+df_final_2011 = gpd.GeoDataFrame(df_final_2011, geometry='geometry')
 
 df = px.data.iris() # iris is a pandas DataFrame
 fig = px.scatter(df, x="sepal_width", y="sepal_length")
@@ -205,25 +212,50 @@ layout =html.Div([
               ],
          ),
 
+        html.Span([
+            html.Br(),
+            html.Br(),
+            dbc.Row([
+                dbc.Col([
+                    dcc.Graph(
+                    id = 'my_map3',
+                    figure = {}
+                        )
+                    ], lg=5, md=2, sm=1),
+                dbc.Col([
+                    html.Img(src='../assets/Legend.png', style={'max-width':'200%', 'height':'auto'})
+                    ], lg=1, md=1, sm=1),
+                dbc.Col([
+                    dcc.Graph(
+                    id = 'my_map_2',
+                    figure = {}
+                        )
+                    ], lg=5, md=2, sm=1),
+                ])
+            ], id = 'seccion10'),
 
-           dcc.Graph(
-             id = 'my_map3',
-               figure = {}
-         ),
+            dbc.Row([
+                html.Br(),
+                html.Br(),
+                dbc.Col([
+                    dbc.Row([
+                    html.H5('Gráfica 2011')], justify="center", align="center")]),
+                dbc.Col([
+                    dbc.Row([
+                    html.H5('Gráfica 2020')], justify="center", align="center")]),
+                ]),
 
-          dcc.Graph(
-             id = 'my_map_2',
-               figure = {}
-         ),
-
-          dcc.Graph(
-             id = 'bargraph',
-               figure = {}
-         ),
-
+            dbc.Row([
+                dbc.Col([
+                    dcc.Graph(
+                        id = 'bargraph',
+                        figure = {}
+                     ),
+                    ]),
+                ]),
 
      ])
-        ])
+        ]),
 
     dbc.Container([
         html.Br(),

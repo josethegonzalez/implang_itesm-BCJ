@@ -19,8 +19,16 @@ import callbacks
 
 
 df_final_2020 = pd.read_csv('df_final_2020.csv')
+df_final_2020.set_index('RML')
 df_final_2011 = pd.read_csv('df_final_2011.csv')
+df_final_2011.set_index('RML')
 df_SUELOS_PIVOT = pd.read_csv('df_SUELOS_PIVOT.csv')
+
+df_final_2020['geometry'] = gpd.GeoSeries.from_wkt(df_final_2020['geometry'])
+df_final_2020 = gpd.GeoDataFrame(df_final_2020, geometry='geometry')
+df_final_2011['geometry'] = gpd.GeoSeries.from_wkt(df_final_2011['geometry'])
+df_final_2011 = gpd.GeoDataFrame(df_final_2011, geometry='geometry')
+
 final_2v = pd.read_csv('PoblacionFinal.csv')
 df_denue = pd.read_csv('df_denue.csv')
 
