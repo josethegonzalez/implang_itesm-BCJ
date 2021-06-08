@@ -101,11 +101,9 @@ layout =html.Div([
                 html.Img(src='../assets/st2.jpg', style={'max-width':'100%', 'height':'auto'}),
                 ),
             dbc.Col([
-                html.H5('Titulo de testimonio 1'),
+                html.H5('Georgia, 65+ años'),
                 html.Br(),
-                html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.'),
-                html.Br(),
-                html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.')
+                html.P('"En los últimos 10 años he notado más tráfico y más edificios. También he notado más parques y mejoras en pavimentación. Vivir en San Pedro siempre ha sido más caro que otros municipios. Creo que actualmente hay más vivienda, pero si va aumentando mucho el comercio. Lo que más me gusta de vivir en San Pedro es la seguridad que siento, que toda mi familia vive aquí, y que tenemos todo lo que necesitamos a la mano."'),
                 ]),
             ])
         ]),
@@ -163,11 +161,13 @@ layout =html.Div([
 
         dbc.Container([
             ## Texto
-            dbc.Row(
-                dbc.Col(
-                    html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.')
-                    ), className='px-5 py-4'
-                ),
+            dbc.Row([
+                dbc.Col([
+                    html.H5('Daniela, 26-64 años'),
+                    html.Br(),
+                    html.P('"Últimamente si he notado cambios en San Pedro y en el costo de vivir en San Pedro. También creo que han cambiado los números de comercios y viviendas en los últimos años. Lo que más me gusta de vivir en San Pedro es la calidad de vida, la disponibilidad de servicios, comercios, y opciones."')
+                ], className= 'px-5 py-4')
+                ]),
 
             dbc.Row(
                 dbc.Col([
@@ -183,11 +183,9 @@ layout =html.Div([
         html.Br(),
         dbc.Row([
             dbc.Col([
-                html.H5('Titulo de testimonio 2'),
+                html.H5('Eline, 65+ años'),
                 html.Br(),
-                html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.'),
-                html.Br(),
-                html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.')
+                html.P('"En los últimos 10 años he notado cambios en San Pedro y en el costo de vivir en San Pedro. Creo que actualmente hay más viviendas, pero que si han cambiados los números de comercios también. Lo que más me gusta de vivir en San Pedro es el cableado subterráneo."'),
                 ]),
             dbc.Col(
                 html.Img(src='../assets/st3.jpg', style={'max-width':'100%', 'height':'auto'}),
@@ -308,9 +306,11 @@ layout =html.Div([
     dbc.Container([
             ## Texto
             dbc.Row(
-                dbc.Col(
-                    html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.')
-                    ), className='px-5 py-4'
+                dbc.Col([
+                    html.H5('Armando, 26-64 años'),
+                    html.Br(),
+                    html.P('"Últimamente he notado cambios en San Pedro y en el costo de vivir en San Pedro. Lo que más me gusta de vivir en San Pedro es la calidad de vida y seguridad."')
+                ]), className='px-5 py-4'
                 )
             ]),
 
@@ -333,11 +333,9 @@ layout =html.Div([
                 html.Img(src='../assets/st4.jpg', style={'max-width':'100%', 'height':'auto'}),
                 ),
             dbc.Col([
-                html.H5('Titulo de testimonio 2'),
+                html.H5('Elsa, 65+ años'),
                 html.Br(),
-                html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible. La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.'),
-                html.Br(),
-                html.P('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.')
+                html.P('"En los últimos 10 años he notado cambios que el municipio está muchísimo mejor. Fuera del predial, el costo de vivir en San Pedro no siento que haya aumentado. Creo que, aunque hay mucho comercio, hay más que viviendas. Lo que más me gusta de vivir en San Pedro es que hay todo lo que necesito cerquita."'),
                 ]),
             ]),
             html.Br(),
@@ -374,12 +372,11 @@ layout =html.Div([
 
             ## Texto
             dbc.Row([
-                dbc.Col(
-                    html.H5('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.'), lg=3, md=9, sm=4
-                    ),
-                dbc.Col(
-                    html.H5('La bicicleta tiene enormes beneficios no sólo para la salud sino también para el medio ambiente, ya que se trata de un medio de transporte que favorece la movilidad sostenible.'), lg=9, md=3, sm=8
-                    ),
+                dbc.Col([
+                    html.H5('Alejandra, 65+ años'),
+                    html.Br(),
+                    html.P('Últimamente he notado que San Pedro ha crecido, y en el costo de vivir ha ido incrementando. Lo que más me gusta de vivir en San Pedro es todo el municipio, la belleza, la seguridad, el gobierno, la calidad de vida, entre otros.')
+                ], lg=3, md=9, sm=4 )
                 ],className='py-3')
 
             ]),
