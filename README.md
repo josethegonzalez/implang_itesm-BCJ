@@ -1,3 +1,3 @@
 # implang_itesm-BCJ
 
- Correro app.py para inicializar el proyecto final.
+ Correr el archivo app.py para inicializar el proyecto final.
