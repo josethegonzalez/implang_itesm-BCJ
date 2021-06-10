@@ -48,42 +48,77 @@ layout =html.Div([
 
     # SECCIÓN 1
 
-       dbc.Container([
-        html.Br(),
-        html.Br(),
-        dbc.Row([
+       # dbc.Container([
+       #  html.Br(),
+       #  html.Br(),
+       #  dbc.Row([
 
-            dbc.Col(
-                html.Div(
-                    html.A(dbc.Button("Comercios", outline = True, color="primary", block = True, className="mr-1"), href = '#seccion1'))
-                ),
-            dbc.Col(
-                html.Div(
-                    dbc.Button("Población", outline = True, color="primary", block = True, className="mr-1"))
-                ),
-            dbc.Col(
-                html.Div(
-                    dbc.Button("Usos de Suelo", outline = True, color="primary", block = True, className="mr-1", href = '#top'))
-                )
-            ]),
-        html.Br(),
-        html.Br(),
-        ]),
+       #      dbc.Col(
+       #          html.Div(
+       #              html.A(dbc.Button("Comercios", outline = True, color="primary", block = True, className="mr-1"), href = '#seccion1'))
+       #          ),
+       #      dbc.Col(
+       #          html.Div(
+       #              dbc.Button("Población", outline = True, color="primary", block = True, className="mr-1"))
+       #          ),
+       #      dbc.Col(
+       #          html.Div(
+       #              dbc.Button("Usos de Suelo", outline = True, color="primary", block = True, className="mr-1", href = '#top'))
+       #          )
+       #      ]),
+       #  html.Br(),
+       #  html.Br(),
+       #  ]),
 
     dbc.Container([
 
         ## Títutlo
         dbc.Row(
             dbc.Col(
-                html.H2('Evolución del Municipio', style = {'text-align':'center'})
+                html.H1('Evolución del Municipio', style = {'text-align':'center'})
                 ), className='px-1 pt-4 py-3'
             ),
 
 
+        # dbc.Row([
+
+        #     dbc.Col(
+        #         html.Div(
+        #             html.A(dbc.Button("Comercios", outline = True, color="primary", block = True, className="mr-1", style = {'background-color': '#3F698F', 'color': 'white', 'border': '0px'}), href = '#seccion1'))
+        #         ),
+        #     dbc.Col(
+        #         html.Div(
+        #             html.A(dbc.Button("Población", outline = True, color="primary", block = True, className="mr-1", style = {'background-color': '#3F698F', 'color': 'white', 'border': '0px'}), href = '#seccion2'))
+        #         ),
+        #     dbc.Col(
+        #         html.Div(
+        #             html.A(dbc.Button("Usos de Suelo", outline = True, color="primary", block = True, className="mr-1", style = {'background-color': '#3F698F', 'color': 'white', 'border': '0px'}), href = '#seccion3'))
+        #         )
+        #     ]),
+
+        dbc.Row([
+
+            dbc.Col(
+                html.Div(
+                    html.A(dbc.Button("Comercios", outline = True, color="dark", block = True, className="mr-1"), href = '#seccion1'))
+                ),
+            dbc.Col(
+                html.Div(
+                    html.A(dbc.Button("Población", outline = True, color="dark", block = True, className="mr-1"), href = '#seccion2'))
+                ),
+            dbc.Col(
+                html.Div(
+                    html.A(dbc.Button("Usos de Suelo", outline = True, color="dark", block = True, className="mr-1"), href = '#seccion3'))
+                )
+            ]),
+
+        html.Br(),
+        html.Br(),
         dbc.Row(
             dbc.Col([
-                html.Img(src='../assets/st1.jpeg', style={'max-width':'100%', 'height':'auto'}),
-                html.H2('Una ciudad más inclusiva se está construyendo',
+            	#html.Img(src='../assets/st1.jpeg', style={'max-width':'110%', 'height':'auto'}),
+                html.Img(src='../assets/st1.jpeg', style={'width':'auto', 'height':'auto'}),
+                html.H2('San Pedro es una ciudad para todos',
                     style={'position': 'absolute', 'top': '50%', 'left': '50%',
                     'transform': 'translate(-50%, -50%)','color': 'white','text-align':'center'})
                 ])
@@ -101,10 +136,12 @@ layout =html.Div([
 
     #     ]),
 
+    #'#f7f8f9'
+    #
 
     dbc.Container([
         html.Br(),
-        html.H4('  Incremento en Comercios', className='py-3', style = {'text-align':'left','background-color': '#f7f8f9'}),
+        html.H2('  Incremento en Comercios', className='py-3', style = {'text-align':'center','background-color': '#A4C2DE', 'color': 'white'}, id = 'seccion1'),
         html.Br(),
         dbc.Row([
             dbc.Col(
@@ -112,7 +149,7 @@ layout =html.Div([
                 ),
             dbc.Col([
 
-                html.H5('Georgia, 65+ años'),
+                html.H5('Georgia – 65+ años'),
                 html.Br(),
                 dcc.Markdown('En los últimos 10 años he notado más **tráfico y más edificios**. También he notado más parques y mejoras en pavimentación.'),
                 dcc.Markdown('Vivir en San Pedro siempre ha sido más caro que otros municipios. Creo que actualmente hay más vivienda, pero si va **aumentando mucho el comercio**.'),
@@ -120,18 +157,17 @@ layout =html.Div([
                 #html.P('"En los últimos 10 años he notado más <b> tráfico y más edificios </b>. También he notado más parques y mejoras en pavimentación. Vivir en San Pedro siempre ha sido más caro que otros municipios. Creo que actualmente hay más vivienda, pero si va aumentando mucho el comercio. Lo que más me gusta de vivir en San Pedro es la seguridad que siento, que toda mi familia vive aquí, y que tenemos todo lo que necesitamos a la mano."'),
                 ]),
             ]),
-        html.Br(),
+       	html.Br(),
         ]),
 
 
     dbc.Container([
-        html.Br(),
-        html.Hr(),
-        html.H5('Observa los cambios en los comercios por ti mismo.', style = {'text-align':'center'}),
-        html.Br(),
+    	html.Hr(),
+    	html.H4('Observa los cambios en los comercios por ti mismo.', style = {'text-align':'center'}),
+    	html.Br(),
         html.Div([
 
-            #html.H5('')
+        	#html.H5('')
 
          html.Div([
 
@@ -160,11 +196,11 @@ layout =html.Div([
     ]),
 
     dbc.Container([
-        html.Br(),
-        html.Br(),
-        html.Br(),
-        html.Hr(),
-        html.H5('En 10 años, la cantidad de comercios ha incrementado en un 64%.', style = {'text-align':'center'}),
+    	html.Br(),
+    	html.Br(),
+    	html.Br(),
+    	html.Hr(),
+    	html.H4('En 10 años, la cantidad de comercios ha incrementado en un 64%.', style = {'text-align':'center'}),
         html.Div([
          html.Div([
 
@@ -231,7 +267,8 @@ layout =html.Div([
         dbc.Container([
             ## Texto
             html.Br(),
-            html.H4('  Cambios en la Población', className='py-3', style = {'text-align':'left','background-color': '#f7f8f9'}),
+            html.Br(),
+            html.H2('  Cambios en la Población', className='py-3', style = {'text-align':'center','background-color': '#A4C2DE', 'color': 'white'}, id = 'seccion2'),
             html.Br(),
             # dbc.Row([
             #     dbc.Col([
@@ -243,7 +280,7 @@ layout =html.Div([
 
             dbc.Row(
                 dbc.Col([
-                    html.Img(src='../assets/st5.jpg', style={'max-width':'100%', 'height':'auto'}),
+                    html.Img(src='../assets/st5.jpg', style={'max-width':'100%', 'height':'auto', 'align':'right'}),
                     html.H2('San Pedro sigue creciendo',
                         style={'position': 'absolute', 'top': '50%', 'left': '50%',
                         'transform': 'translate(-50%, -50%)'})
@@ -255,9 +292,15 @@ layout =html.Div([
         html.Br(),
         dbc.Row([
             dbc.Col([
-                html.H5('Eline, 65+ años'),
+
+            	html.H5('Daniel – 25 a 64 años'),
                 html.Br(),
-                html.P('"En los últimos 10 años he notado cambios en San Pedro y en el costo de vivir en San Pedro. Creo que actualmente hay más viviendas, pero que si han cambiados los números de comercios también. Lo que más me gusta de vivir en San Pedro es el cableado subterráneo."'),
+                dcc.Markdown('En los últimos 10 años he notado cambios en San Pedro, ha incrementado el **costo de vivir** en el municipio.'),
+                dcc.Markdown('Sí creo que han aumentado el número de comercios; así como **disminuido la cantidad de viviendas disponibles.**'),
+                dcc.Markdown('Por esto, las casas son tan caras que **resulta casi inalcanzable comenzar una familia en San Pedro**. Las personas que llevan aquí más tiempo no tienen este problema.'),
+
+
+  
                 ]),
             dbc.Col(
                 html.Img(src='../assets/st3.jpg', style={'max-width':'60%', 'height':'auto', 'align':'right'}),
@@ -271,7 +314,7 @@ layout =html.Div([
         html.Br(),
         html.Hr(),
         html.Span([
-            html.H5('¿Cuántos años tienes tu?', style = {'text-align':'center'}),
+            html.H4('¿Cuántos años tienes tu?', style = {'text-align':'center'}),
             # dbc.Row([
             #     dbc.Col([
             #         dcc.Graph(figure=fig)
@@ -318,76 +361,11 @@ layout =html.Div([
 
 
 
-
-
-    # dbc.Container([
-    # html.Br(),
-    #  html.Div([
-
-    #      html.Div(id='text-output'),
-
-    #      dcc.Dropdown(
-    #          id = 'dropdown3',
-    #          placeholder="Selecciona la Zona a Filtrar",
-    #          value = 'Casco Urbano',
-    #          multi = False,
-    #          options=[
-    #             {'label': 'Valle Oriente', 'value': 'Valle Oriente'},
-    #             {'label': 'Casco Urbano', 'value': 'Casco Urbano'},
-    #             {'label': 'Centrito', 'value': 'Centrito'}
-    #           ],
-    #      ),
-
-    #     html.Span([
-    #         html.Br(),
-    #         html.Br(),
-    #         dbc.Row([
-    #             dbc.Col([
-    #                 dcc.Graph(
-    #                 id = 'my_map3',
-    #                 figure = {}
-    #                     )
-    #                 ], lg=5, md=2, sm=1),
-    #             dbc.Col([
-    #                 html.Img(src='../assets/Legend.png', style={'max-width':'200%', 'height':'auto'})
-    #                 ], lg=1, md=1, sm=1),
-    #             dbc.Col([
-    #                 dcc.Graph(
-    #                 id = 'my_map_2',
-    #                 figure = {}
-    #                     )
-    #                 ], lg=5, md=2, sm=1),
-    #             ])
-    #         ], id = 'seccion10'),
-
-    #         dbc.Row([
-    #             html.Br(),
-    #             html.Br(),
-    #             dbc.Col([
-    #                 dbc.Row([
-    #                 html.H5('Gráfica 2011')], justify="center", align="center")]),
-    #             dbc.Col([
-    #                 dbc.Row([
-    #                 html.H5('Gráfica 2020')], justify="center", align="center")]),
-    #             ]),
-
-    #         dbc.Row([
-    #             dbc.Col([
-    #                 dcc.Graph(
-    #                     id = 'bargraph',
-    #                     figure = {}
-    #                  ),
-    #                 ]),
-    #             ]),
-
-    #  ])
-    #     ]),
-
     dbc.Container([
         html.Br(),
         html.Br(),
         html.Span([
-            html.H4('  Usos de Suelo', className='py-3', style = {'text-align':'left','background-color': '#f7f8f9'})
+            html.H2('  Usos de Suelo', className='py-3', style = {'text-align':'center','background-color': '#A4C2DE', 'color': 'white'})
             # dbc.Row([
             #     dbc.Col([
             #         dcc.Graph(figure=fig)
@@ -397,7 +375,6 @@ layout =html.Div([
             #         ], lg=6, md=4, sm=1)
             #     ])
             ], id = 'seccion3'),
-        html.Br(),
         html.Br(),
         ]),
 
@@ -416,7 +393,7 @@ layout =html.Div([
             ## Texto
             dbc.Row(
                 dbc.Col([
-                    html.Img(src='../assets/st6.jpg', style={'max-width':'100%', 'height':'auto'}),
+                    html.Img(src='../assets/stg7.png', style={'max-width':'100%', 'height':'auto'}),
                     html.H2('San Pedro sigue creciendo',
                         style={'position': 'absolute', 'top': '50%', 'left': '50%',
                         'transform': 'translate(-50%, -50%)'})
@@ -428,12 +405,16 @@ layout =html.Div([
         html.Br(),
         dbc.Row([
             dbc.Col(
-                html.Img(src='../assets/st4.jpg', style={'max-width':'60%', 'height':'auto'}),
+                html.Img(src='../assets/st8.jpg', style={'max-width':'60%', 'height':'auto'}),
                 ),
             dbc.Col([
-                html.H5('Elsa, 65+ años'),
+
+            	html.H5('Natalia – 15 a 24 años'),
                 html.Br(),
-                html.P('"En los últimos 10 años he notado cambios que el municipio está muchísimo mejor. Fuera del predial, el costo de vivir en San Pedro no siento que haya aumentado. Creo que, aunque hay mucho comercio, hay más que viviendas. Lo que más me gusta de vivir en San Pedro es que hay todo lo que necesito cerquita."'),
+                dcc.Markdown('En **Centrito** encuentro **los mejores bares y antros** para salir con mis amigas.'),
+                dcc.Markdown('Los nuevos centros comerciales en **Valle Oriente** es donde hay más **variedad de tiendas y restaurantes.**'),
+                dcc.Markdown('En el **Casco Urbano** siempre encuentro cosas que no tienen en otros lugares; tal y como **antigüedades y experiencias únicas**.'),
+           
                 ]),
             ]),
             html.Br(),
@@ -445,7 +426,7 @@ layout =html.Div([
     dbc.Container([
     html.Br(),
     html.Hr(),
-    html.H5('Las zonas principales son las más afectadas.',style = {'text-align':'center'}),
+    html.H4('Las zonas principales son las más afectadas.',style = {'text-align':'center'}),
     html.Br(),
     html.Br(),
      html.Div([
@@ -473,16 +454,13 @@ layout =html.Div([
                     id = 'my_map3',
                     figure = {}
                         )
-                    ], lg=5, md=2, sm=1),
-                # dbc.Col([
-                #     html.Img(src='../assets/Legend.png', style={'max-width':'200%', 'height':'auto'})
-                #     ], lg=1, md=1, sm=1),
+                    ], lg=6, md=4, sm=1),
                 dbc.Col([
                     dcc.Graph(
                     id = 'my_map_2',
                     figure = {}
                         )
-                    ], lg=5, md=2, sm=1),
+                    ], lg=6, md=4, sm=1),
                 ])
             ], id = 'seccion10'),
 
@@ -497,11 +475,12 @@ layout =html.Div([
                     html.H6('Gráfica 2020')], justify="center", align="center")]),
                 ]),
 
-            html.Img(src='../assets/Legend_2.png', style={'max-width':'50%', 'height':'auto', 'align' :'center', 'text-align' :'center'}),
+            html.Img(src='../assets/legend3.png', style={'max-width':'110%', 'height':'auto', 'align' :'center', 'text-align' :'center'}),
 
             html.Br(),
             html.Hr(),
-
+            html.Br(),
+            html.H4('Observa los cambios en los principales usos de suelo.',style = {'text-align':'center'}),
             dbc.Row([
                 dbc.Col([
                     dcc.Graph(
@@ -539,19 +518,39 @@ layout =html.Div([
             # Título
             dbc.Row(
                 dbc.Col(
-                    html.H2('Otro ejemplo de título')
-                    ),className='py-3', style={'background-color': 'black','color': 'white'}
+                    html.H2(' ')
+                    ),className='py-3', style={'background-color': 'grey','color': 'white'}
                 ),
 
             ## Texto
             dbc.Row([
                 dbc.Col([
-                    html.H5('Alejandra, 65+ años'),
+                    html.H5('Alejandra – 65+ años'),
                     html.Br(),
-                    html.P('Últimamente he notado que San Pedro ha crecido, y en el costo de vivir ha ido incrementando. Lo que más me gusta de vivir en San Pedro es todo el municipio, la belleza, la seguridad, el gobierno, la calidad de vida, entre otros.')
-                ], lg=3, md=9, sm=4 )
-                ],className='py-3')
+                    dcc.Markdown('*Lo que más me gusta de vivir en San Pedro es todo el municipio, la belleza, la seguridad, el gobierno, la calidad de vida, entre muchas otras cosas.*')
+                ], lg=6, md=9, sm=4 ),
+                dbc.Col(
+                    html.Img(src='../assets/st4.jpg', style={'max-width':'60%', 'height':'auto'}),
+                ),
 
+                ],className='py-3'),
+
+            dbc.Row(
+                dbc.Col(
+                    html.H2(' ')
+                    ),className='py-3', style={'background-color': 'grey','color': 'white'}
+                ),
+            html.Br(),
+            html.Br(),
+
+            dbc.Row([
+
+
+                html.H4('Y tú, ¿qué municipio le quieres dejar a tu familia?')
+
+                ], justify="center", align="center"),
+            html.Br(),
+            html.Br()
             ]),
 
         ######################################## TERMINA ESPACIO DE EDICIÓN ########################################
@@ -590,7 +589,7 @@ layout =html.Div([
                     ]), className='px-1 py-4'
                 )
 
-            ]),
+            ],style={'background-color': '#f7f8f9','color': 'black'}),
 
         dbc.Container([
 

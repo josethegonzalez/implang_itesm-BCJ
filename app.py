@@ -112,8 +112,10 @@ def update_output(edad):
             y=tryout['Población'].to_list(),
             text=tryout['Población'].to_list(),
             textposition='auto',
+            #marker_color = '#aac2de',
         )])
 
+    fig.update_layout(plot_bgcolor='white')
     return fig
 
 @app.callback(
@@ -250,7 +252,22 @@ def update_output3(zona):
 
     df_bar = df_SUELOS_PIVOT[df_SUELOS_PIVOT['ZONA'] == zona]
 
-    bar = px.bar(df_bar, x= 'Categoria', y = 'Value', color = 'Year', barmode="group")
+    #bar = px.bar(df_bar, x= 'Categoria', y = 'Value', color = 'Year', barmode="group")
+
+    bar_2011 = df_bar[df_bar['Year'] == 2011]['Value']
+    bar_2011 = bar_2011.to_list()
+
+    bar_2020 = df_bar[df_bar['Year'] == 2020]['Value']
+    bar_2020 = bar_2020.to_list()
+
+    bar = go.Figure(data=[
+        go.Bar(name='2011', x=df_bar['Categoria'].unique().tolist(), y=bar_2011, text =bar_2011 ,  textposition='auto'),
+        go.Bar(name='2020', x=df_bar['Categoria'].unique().tolist(), y=bar_2020, text = bar_2020, textposition='auto', marker_color = '#CFD674')
+    ])
+    
+    # Change the bar mode
+    bar.update_layout(barmode='group')
+    bar.update_layout(plot_bgcolor='white')
 
     return bar
 
